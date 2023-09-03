@@ -1,0 +1,14 @@
+<script type="module">
+    import { io } from "https://cdn.socket.io/4.4.1/socket.io.esm.min.js";
+  
+    const socket = io('http://localhost:3006',{
+        extraHeaders: {
+            "my-custom-header": "abcd"
+        }
+    });
+
+    socket.on("hi", (arg, callback) => {
+            console.log(arg); // "world"
+        });
+
+  </script>
